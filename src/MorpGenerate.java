@@ -11,8 +11,8 @@ public class MorpGenerate {
 	String case8 = "8";
 	String case9 = "9";
 	
-	String p1Case = "X";
-	String p2Case = "O";
+	String p1Case = "\u2718"; //not used
+	String p2Case = "\u25CF"; //not used
 
 	boolean turn = true;
 

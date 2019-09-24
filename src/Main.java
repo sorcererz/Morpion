@@ -20,13 +20,13 @@ public class Main {
 			case 1:
 				if (morpion.getCase1() == "1") {
 					if (morpion.isTurn()) {
-						morpion.setCase1("X"); //turn the selected case into an X
+						morpion.setCase1("✘"); //turn the selected case into an X
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
 						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les X !");
+							ihm.display("Partie gagnée par les ✘ !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -65,13 +65,13 @@ public class Main {
 						}
 						break;
 					} else {
-						morpion.setCase1("O"); //turn the selected case into an O
+						morpion.setCase1("●"); //turn the selected case into an O
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
 						//check if player O won
 						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les O !");
+							ihm.display("Partie gagnée par les ● !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -117,13 +117,13 @@ public class Main {
 			case 2:
 				if (morpion.getCase2() == "2") {
 					if (morpion.isTurn()) {
-						morpion.setCase2("X");
+						morpion.setCase2("✘");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
 						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les X !");
+							ihm.display("Partie gagnée par les ✘ !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -162,13 +162,13 @@ public class Main {
 						}
 						break;
 					} else {
-						morpion.setCase2("O");
+						morpion.setCase2("●");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
 						//check if player O won
 						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les O !");
+							ihm.display("Partie gagnée par les ● !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -214,13 +214,13 @@ public class Main {
 			case 3:
 				if (morpion.getCase3() == "3") {
 					if (morpion.isTurn()) {
-						morpion.setCase3("X");
+						morpion.setCase3("✘");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
 						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les X !");
+							ihm.display("Partie gagnée par les ✘ !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -259,13 +259,13 @@ public class Main {
 						}
 						break;
 					} else {
-						morpion.setCase3("O");
+						morpion.setCase3("●");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
 						//check if player O won
 						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les O !");
+							ihm.display("Partie gagnée par les ● !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -311,13 +311,13 @@ public class Main {
 			case 4:
 				if (morpion.getCase4() == "4") {
 					if (morpion.isTurn()) {
-						morpion.setCase4("X");
+						morpion.setCase4("✘");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
 						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les X !");
+							ihm.display("Partie gagnée par les ✘ !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -356,13 +356,13 @@ public class Main {
 						}
 						break;
 					} else {
-						morpion.setCase4("O");
+						morpion.setCase4("●");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
 						//check if player O won
 						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les O !");
+							ihm.display("Partie gagnée par les ● !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -408,13 +408,13 @@ public class Main {
 			case 5:
 				if (morpion.getCase5() == "5") {
 					if (morpion.isTurn()) {
-						morpion.setCase5("X");
+						morpion.setCase5("✘");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
 						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les X !");
+							ihm.display("Partie gagnée par les ✘ !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -453,13 +453,13 @@ public class Main {
 						}
 						break;
 					} else {
-						morpion.setCase5("O");
+						morpion.setCase5("●");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
 						//check if player O won
 						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les O !");
+							ihm.display("Partie gagnée par les ● !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -505,13 +505,13 @@ public class Main {
 			case 6:
 				if (morpion.getCase6() == "6") {
 					if (morpion.isTurn()) {
-						morpion.setCase6("X");
+						morpion.setCase6("✘");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
 						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les X !");
+							ihm.display("Partie gagnée par les ✘ !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -550,13 +550,13 @@ public class Main {
 						}
 						break;
 					} else {
-						morpion.setCase6("O");
+						morpion.setCase6("●");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
 						//check if player O won
 						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les O !");
+							ihm.display("Partie gagnée par les ● !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -602,13 +602,13 @@ public class Main {
 			case 7:
 				if (morpion.getCase7() == "7") {
 					if (morpion.isTurn()) {
-						morpion.setCase7("X");
+						morpion.setCase7("✘");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
 						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les X !");
+							ihm.display("Partie gagnée par les ✘ !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -647,13 +647,13 @@ public class Main {
 						}
 						break;
 					} else {
-						morpion.setCase7("O");
+						morpion.setCase7("●");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
 						//check if player O won
 						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les O !");
+							ihm.display("Partie gagnée par les ● !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -699,13 +699,13 @@ public class Main {
 			case 8:
 				if (morpion.getCase8() == "8") {
 					if (morpion.isTurn()) {
-						morpion.setCase8("X");
+						morpion.setCase8("✘");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
 						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les X !");
+							ihm.display("Partie gagnée par les ✘ !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -744,13 +744,13 @@ public class Main {
 						}
 						break;
 					} else {
-						morpion.setCase8("O");
+						morpion.setCase8("●");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
 						//check if player O won
 						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les O !");
+							ihm.display("Partie gagnée par les ● !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -796,13 +796,13 @@ public class Main {
 			case 9:
 				if (morpion.getCase9() == "9") {
 					if (morpion.isTurn()) {
-						morpion.setCase9("X");
+						morpion.setCase9("✘");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
 						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les X !");
+							ihm.display("Partie gagnée par les ✘ !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
@@ -841,13 +841,13 @@ public class Main {
 						}
 						break;
 					} else {
-						morpion.setCase9("O");
+						morpion.setCase9("●");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
 						//check if player O won
 						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
-							ihm.display("Partie gagnée par les O !");
+							ihm.display("Partie gagnée par les ● !");
 							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
 							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
 							if (strChoice2.equals("r") || strChoice2.equals("R")) {
