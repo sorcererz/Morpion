@@ -20,18 +20,94 @@ public class Main {
 			case 1:
 				if (morpion.getCase1() == "1") {
 					if (morpion.isTurn()) {
-						morpion.setCase1("X");
+						morpion.setCase1("X"); //turn the selected case into an X
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
+						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
 							ihm.display("Partie gagnée par les X !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
 						}
 						break;
 					} else {
-						morpion.setCase1("O");
+						morpion.setCase1("O"); //turn the selected case into an O
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
+						//check if player O won
+						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultWon == true) {
+							ihm.display("Partie gagnée par les O !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
 						break;
 					}
 				} else {
@@ -44,15 +120,91 @@ public class Main {
 						morpion.setCase2("X");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
+						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
 							ihm.display("Partie gagnée par les X !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
 						}
 						break;
 					} else {
 						morpion.setCase2("O");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
+						//check if player O won
+						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultWon == true) {
+							ihm.display("Partie gagnée par les O !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
 						break;
 					}
 				} else {
@@ -65,15 +217,91 @@ public class Main {
 						morpion.setCase3("X");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
+						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
 							ihm.display("Partie gagnée par les X !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
 						}
 						break;
 					} else {
 						morpion.setCase3("O");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
+						//check if player O won
+						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultWon == true) {
+							ihm.display("Partie gagnée par les O !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
 						break;
 					}
 				} else {
@@ -86,15 +314,91 @@ public class Main {
 						morpion.setCase4("X");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
+						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
 							ihm.display("Partie gagnée par les X !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
 						}
 						break;
 					} else {
 						morpion.setCase4("O");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
+						//check if player O won
+						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultWon == true) {
+							ihm.display("Partie gagnée par les O !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
 						break;
 					}
 				} else {
@@ -107,15 +411,91 @@ public class Main {
 						morpion.setCase5("X");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
+						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
 							ihm.display("Partie gagnée par les X !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
 						}
 						break;
 					} else {
 						morpion.setCase5("O");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
+						//check if player O won
+						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultWon == true) {
+							ihm.display("Partie gagnée par les O !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
 						break;
 					}
 				} else {
@@ -128,15 +508,91 @@ public class Main {
 						morpion.setCase6("X");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
+						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
 							ihm.display("Partie gagnée par les X !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
 						}
 						break;
 					} else {
 						morpion.setCase6("O");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
+						//check if player O won
+						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultWon == true) {
+							ihm.display("Partie gagnée par les O !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
 						break;
 					}
 				} else {
@@ -149,15 +605,91 @@ public class Main {
 						morpion.setCase7("X");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
+						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
 							ihm.display("Partie gagnée par les X !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
 						}
 						break;
 					} else {
 						morpion.setCase7("O");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
+						//check if player O won
+						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultWon == true) {
+							ihm.display("Partie gagnée par les O !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
 						break;
 					}
 				} else {
@@ -170,15 +702,91 @@ public class Main {
 						morpion.setCase8("X");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
+						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
 							ihm.display("Partie gagnée par les X !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
 						}
 						break;
 					} else {
 						morpion.setCase8("O");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
+						//check if player O won
+						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultWon == true) {
+							ihm.display("Partie gagnée par les O !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
 						break;
 					}
 				} else {
@@ -191,15 +799,91 @@ public class Main {
 						morpion.setCase9("X");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(false);
+						//check if player X won
 						boolean resultWon = check.wonByX(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						if (resultWon == true) {
 							ihm.display("Partie gagnée par les X !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
 						}
 						break;
 					} else {
 						morpion.setCase9("O");
 						ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
 						morpion.setTurn(true);
+						//check if player O won
+						boolean resultWon = check.wonByO(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultWon == true) {
+							ihm.display("Partie gagnée par les O !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
+						//check if the game ended in a draw
+						boolean resultDraw = check.draw(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+						if (resultDraw == true) {
+							ihm.display("Match nul !");
+							ihm.display("Entrez la touche r pour rejouer ou 0 pour quitter");
+							String strChoice2 = ihm.read(); // new instance of a value typed into the terminal
+							if (strChoice2.equals("r") || strChoice2.equals("R")) {
+								MorpGenerate cleanMorpion = new MorpGenerate();
+								morpion = cleanMorpion;
+								ihm.displayGrid(morpion.getCase1(), morpion.getCase2(), morpion.getCase3(), morpion.getCase4(), morpion.getCase5(), morpion.getCase6(), morpion.getCase7(), morpion.getCase8(), morpion.getCase9());
+								break;
+							} else if (strChoice2.equals("0")) {
+								ihm.display("Fin du jeu");
+								choice = Integer.parseInt(strChoice2);
+							}	else {
+								ihm.display("Erreur choix non reconnu, fermeture de l'application");
+								choice = 0;
+							}
+							break;
+						}
 						break;
 					}
 				} else {
@@ -212,6 +896,11 @@ public class Main {
 			}
 
 		} while (choice != 0);		
+	}
+	
+	public static MorpGenerate refresh() {
+		MorpGenerate cleanMorpion = new MorpGenerate();
+		return cleanMorpion;
 	}
 
 }
